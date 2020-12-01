@@ -2,7 +2,7 @@
   <div>
     <div class="container-fluid blue-bg">
       <div class="con">        
-        <p >CAMPOS DE TRABAJO</p>
+        <p >CAMPOS DE TRABAJO aja ahora si </p>
       </div>
       <article
         class="card"
