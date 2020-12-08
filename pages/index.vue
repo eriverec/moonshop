@@ -1,84 +1,64 @@
 <template>
-  <div class="container">
+  <div class="">
     <div>
-      <header class="content-logos">
-        <logo />
-        <span class="plus">+</span>
-        <VuesaxLogo />
-      </header>
-      <h1 class="title">
-        Nuxt.js + Vuesax
-      </h1>
-      <h2 class="subtitle">
-        <a href="https://vuesax.com/">Vuesax</a> is a framework of ui components for <a href="https://vuejs.org/">Vuejs</a>, It was created to make new interfaces that have a new trend and are visually beautiful
-      </h2>
-      <div class="links">
-        <h3 class="h3">
-          Vuesax
-        </h3>
-        <a
-          href="https://vuesax.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://discordapp.com/invite/9dsKtvB"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          Discord
-        </a>
-        <a
-          href="https://github.com/lusaxweb/vuesax"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-      <div class="links">
-        <h3 class="h3">
-          Nuxt.js
-        </h3>
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+      <ul >
+        <li v-for="(item, i) in items" :key="i" :to="item.to" router exact>
+          <NuxtLink to="/vestidos">{{ item.title }}</NuxtLink>
+        </li>
+        <li>
+          <p>👋</p>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuesaxLogo from '~/components/VuesaxLogo.vue'
-
 export default {
-  components: {
-    Logo,
-    VuesaxLogo
+  data() {
+    return {
+      items: [
+        {
+          title: "Pantalones",
+          to: "/pantalones"
+        },
+        {
+          title: "Blusas",
+          to: "/blusas"
+        },
+        {
+          title: "Body’s",
+          to: "/bodys"
+        },
+        {
+          title: "Faldas",
+          to: "/faldas"
+        },
+        {
+          title: "Vestidos",
+          to: "/vestidos"
+        }
+      ],
+
+      title: "LIFE dos"
+    };
   }
-}
+};
 </script>
 
-<style>
+<style scoped>
+
+.content__home {
+  text-align: center;
+  padding-top: 60px;
+  justify-content: center;
+}
+
+.content__dentro {
+  display: inline-block;
+  margin: 10px;
+}
+
 .container {
   margin: 0 auto;
   min-height: 100vh;
@@ -88,70 +68,75 @@ export default {
   text-align: center;
 }
 
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 55px;
-  color: #35495e;
-  letter-spacing: 1px;
-  text-transform: capitalize;
-  margin: 25px 0;
+.center2 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  text-align: center;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 1.1rem;
-  color: #526488;
-  word-spacing: 2px;
-  padding-bottom: 15px;
-  max-width: 600px;
+ul {
+  display: inline-grid;
+  grid-auto-flow: row;
+  grid-gap: 24px;
+  justify-items: center;
+  margin: auto;
+  padding: 0px;
 }
 
-.subtitle a {
-  font-weight: 500;
-  color: inherit;
+ul li {
+  list-style: none;
 }
 
-.links {
-  padding-top: 15px;
-  margin-bottom: 20px;
+@media (min-width: 500px) {
+  ul {
+    grid-auto-flow: column;
+  }
 }
 
-.content-logos {
+a {
+  color: #333;
+  text-decoration: none;
+  box-shadow: inset 0 -1px 0 hsla(0, 0%, 12%, 0.4);
+  font-size: 20px;
+}
+
+a:hover {
+  box-shadow: inset 0 -1.2em 0 hsla(0, 0%, 100%, 0.4);
+}
+
+li:last-child {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+li:hover ~ li p {
+  animation: wave-animation 0.3s infinite;
+}
+
+/* below is just for demo styling */
+
+div {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 500px;
+  height: 100vh;
+  width: 100%;
+  /*background-color: #002a38;*/
+  line-height: 1.3;
 }
 
-.plus {
-  font-size: 2.5rem;
-  margin: 15px;
-  color: #35495e;
-}
-
-.h3 {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  font-weight: 400;
-  margin: 10px;
+@keyframes wave-animation {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  75% {
+    transform: rotate(-15deg);
+  }
 }
 </style>

@@ -12,9 +12,11 @@
     "@nuxtjs/axios": "^5.12.2",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/markdownit": "^1.2.10",
+    "boxicons": "^2.0.7",
     "contentful": "^7.15.1",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.6",
+    "vue-tiny-slider": "^0.1.39",
     "vuesax": "^4.0.1-alpha.25"
   },
   "devDependencies": {}
