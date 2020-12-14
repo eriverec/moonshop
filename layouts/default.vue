@@ -1,8 +1,23 @@
 <template>
   <div>
-    <Nuxt />
+      <Nuxt v-if="isIndex" />
+      <template v-else>
+      <Menu />
+      <Nuxt/>
+      </template>
+
   </div>
 </template>
+
+<script>
+export default {
+  computed: {
+    isIndex() {
+      return this.$route.name === "index";
+    },
+  }
+};
+</script>
 
 <style>
 html {

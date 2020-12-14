@@ -1,5 +1,8 @@
 <template>
   <div>
+    
+
+
     <div class="center__fuera">
       <vs-card
         v-for="(seccionVestidos, index) in seccionVestidoss"
@@ -39,18 +42,7 @@
           </nuxt-link>
         </template>
       </vs-card>
-      <vs-button
-       @click="to"
-        size="large"
-        gradient
-        animation-type="scale"
-        class="boton__flotante"
-      >
-        Atras
-        <template #animate>
-          <i class="bx bx-arrow-back"></i>
-        </template>
-      </vs-button>
+ 
     </div>
   </div>
 </template>
@@ -69,11 +61,6 @@ export default {
       })
       .catch(e => console.log(e));
   },
-  methods: {
-    to() {
-      this.$router.go(-1);
-    }
-  }
 };
 </script>
 
@@ -108,4 +95,6 @@ img {
 .vs-button {
   font-family: "Montserrat", sans-serif;
 }
+
+
 </style>

@@ -71,6 +71,7 @@ export default {
     '@nuxtjs/dotenv',
     '@nuxtjs/markdownit',
   ],
+  
   markdownit: {
     injected: true,
     html: true,
