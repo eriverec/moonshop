@@ -32,7 +32,7 @@
           <vs-button success icon v-else>
             <div>{{ seccionVestidos.fields.estado }}</div>
           </vs-button>
-          <nuxt-link :to="'vestidos/' + seccionVestidos.fields.slug">
+          <nuxt-link  :to="'vestidos/' + seccionVestidos.fields.slug">
             <vs-button class="btn-chat" gradient dark animation-type="scale">
               Ver el producto
               <template #animate>
