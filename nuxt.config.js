@@ -70,12 +70,9 @@ export default {
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
-    '@nuxtjs/google-analytics',
+
   ],
 
-  googleAnalytics: {
-    id: 'UA-185581999-1',
-  },
 
 
 
@@ -85,7 +82,13 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/dotenv',
     '@nuxtjs/markdownit',
+    '@nuxtjs/google-analytics',
   ],
+
+  googleAnalytics: {
+    id: 'UA-185581999-1',
+  },
+
 
   markdownit: {
     injected: true,
