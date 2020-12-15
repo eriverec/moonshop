@@ -61,7 +61,6 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    { src: '~/plugins/ga', mode: 'client' },
     '@/plugins/vuesax',
     { src: '~/plugins/contentful' },
   ],
@@ -71,7 +70,12 @@ export default {
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
+    '@nuxtjs/google-analytics',
   ],
+
+  googleAnalytics: {
+    id: 'UA-185581999-1'
+  },
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
