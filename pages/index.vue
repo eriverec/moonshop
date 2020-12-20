@@ -1,9 +1,9 @@
 <template>
-  <div class="">
+  <div>
     <div>
-      <ul >
-        <li v-for="(item, i) in items" :key="i" :to="item.to" router exact>
-          <NuxtLink to="/vestidos">{{ item.title }}</NuxtLink>
+      <ul>
+        <li v-for="(item, i) in items" :key="i">
+          <NuxtLink :to="item.to">{{ item.title }}</NuxtLink>
         </li>
         <li>
           <p>👋</p>
@@ -19,35 +19,33 @@ export default {
     return {
       items: [
         {
-          title: "Pantalones",
-          to: "/pantalones"
+          title: "Inicio",
+          to: "/"
         },
         {
-          title: "Blusas",
-          to: "/blusas"
+          title: "Overoles",
+          to: "/overoles"
         },
-        {
-          title: "Body’s",
-          to: "/bodys"
-        },
+
         {
           title: "Faldas",
           to: "/faldas"
         },
-        {
+      /*  {
           title: "Vestidos",
           to: "/vestidos"
-        }
+        },
+        {
+          title: "Varios",
+          to: "/varios"
+        }*/
       ],
-
-      title: "LIFE dos"
     };
   }
 };
 </script>
 
 <style scoped>
-
 .content__home {
   text-align: center;
   padding-top: 60px;

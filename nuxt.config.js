@@ -15,6 +15,11 @@ export default {
         path: '/vestidos',
         component: 'pages/vestidos/index.vue'
       },
+      {
+        name: 'faldas',
+        path: '/faldas',
+        component: 'pages/faldas/index.vue'
+      },
 
     ]
   },

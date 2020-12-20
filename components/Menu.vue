@@ -18,29 +18,26 @@ export default {
     return {
       items: [
         {
-          title: "Home",
+          title: "Inicio",
           to: "/"
-        },
+        },        
         {
-          title: "Pantalones",
-          to: "/pantalones"
+          title: "Overoles",
+          to: "/overoles"
         },
-        {
-          title: "Blusas",
-          to: "/blusas"
-        },
-        {
-          title: "Body’s",
-          to: "/bodys"
-        },
+        
         {
           title: "Faldas",
           to: "/faldas"
         },
-        {
+       /* {
           title: "Vestidos",
           to: "/vestidos"
-        }
+        },
+        {
+          title: "Varios",
+          to: "/varios"
+        },*/
       
       ],
     };
@@ -48,7 +45,8 @@ export default {
 };
 </script>
 
-<style >
+<style scoped>
+
 .topnav {
   overflow: hidden;
   background-color: #333;
@@ -153,7 +151,7 @@ nav .menuItems li a:hover {
 
 @media (max-width: 600px) {
   nav .menuItems {
-    justify-content: normal;
+    /*justify-content: normal;*/
   }
 }
 </style>
