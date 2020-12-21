@@ -42,7 +42,7 @@ export default {
 
     ],
     script: [{
-      src: 'https://www.googletagmanager.com/gtag/js?id=UA-185581999-1',
+      src: 'https://www.googletagmanager.com/gtag/js?id=UA-185945101-1',
       async: true
     }],
   },
@@ -87,7 +87,7 @@ export default {
   ],
 
   googleAnalytics: {
-    id: 'UA-185581999-1',
+    id: 'UA-185945101-1',
   },
 
 
