@@ -2,6 +2,12 @@
   <div>
     <nav>
       <ul class="menuItems">
+       
+        <li>
+          <NuxtLink to="/">
+          <b> MOONSHOP</b>
+          </NuxtLink>
+        </li>
         <li v-for="(item, i) in items" :key="i">
           <NuxtLink router exact :to="item.to">
             {{ item.title }}
@@ -18,19 +24,15 @@ export default {
     return {
       items: [
         {
-          title: "Inicio",
-          to: "/"
-        },        
-        {
           title: "Overoles",
           to: "/overoles"
         },
-        
+
         {
           title: "Faldas",
           to: "/faldas"
-        },
-       /* {
+        }
+        /* {
           title: "Vestidos",
           to: "/vestidos"
         },
@@ -38,15 +40,13 @@ export default {
           title: "Varios",
           to: "/varios"
         },*/
-      
-      ],
+      ]
     };
   }
 };
 </script>
 
 <style scoped>
-
 .topnav {
   overflow: hidden;
   background-color: #333;
@@ -117,7 +117,7 @@ div {
 
 nav {
   /* margin: 25px;*/
-  background: #f9f9f9;
+  background: pink;
   padding: 5px;
 }
 nav .menuItems {
@@ -152,6 +152,23 @@ nav .menuItems li a:hover {
 @media (max-width: 600px) {
   nav .menuItems {
     /*justify-content: normal;*/
+  }
+}
+
+li:hover ~ li p {
+  animation: wave-animation 0.3s infinite;
+}
+
+@keyframes wave-animation {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  75% {
+    transform: rotate(-15deg);
   }
 }
 </style>

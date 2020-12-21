@@ -1,10 +1,11 @@
 <template>
-  <div>
-      <Nuxt v-if="isIndex" />
-      <template v-else>
+  <div> 
       <Menu />
+      <div class="margenes">
       <Nuxt/>
-      </template>
+
+      </div>
+   
 
   </div>
 </template>
@@ -32,11 +33,6 @@ html {
 body {
   font-family: "Montserrat", sans-serif !important;
 
-  background-image: radial-gradient(
-    circle farthest-corner at 10% 20%,
-    rgba(255, 214, 171, 1) 0%,
-    rgba(255, 182, 182, 1) 90%
-  );
 }
 
 *,
@@ -54,5 +50,15 @@ body {
 
 .nav__dentro {
   background: #ddd;
+}
+.margenes{
+  margin: 0px 250px 0px 250px;
+}
+
+
+@media (max-width: 1024px) {
+  .margenes {
+    margin: 0px 20px 0px 20px;
+  }
 }
 </style>
